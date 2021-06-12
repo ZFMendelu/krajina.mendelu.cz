@@ -1,0 +1,29 @@
+#homepage {
+    #hero {
+        min-height: 95vh;
+        padding-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container-40 {
+            .h2 {
+                padding-bottom: 6rem;
+            }
+        }
+    }
+    .quote {
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+        p {
+            font-size: 2rem;
+            line-height: 130%;
+        }
+    }
+    .text {
+        min-height: 80vh;
+        padding: 7rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

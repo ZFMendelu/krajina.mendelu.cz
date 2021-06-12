@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block meta %}
+        {% include "@SuluWebsite/Extension/seo.html.twig" with {
+            "seo": extension.seo|default([]),
+            "content": content|default([]),
+            "localizations": localizations|default([]),
+            "shadowBaseLocale": shadowBaseLocale|default(),
+        } %}
+    {% endblock %}
+
+    {% block style %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <div class="col logo">
+            KRAJ<span class="green">!</span>NA
+        </div>
+{#        <div class="col desktop-menu">#}
+{#            <a href="#" class="block">vystava</a>#}
+{#            <a href="#" class="block">jak se k nam dostanete</a>#}
+{#            <a href="#" class="block">autori</a>#}
+{#        </div>#}
+{#        <div class="col datetime">#}
+{#            8. 8. - 30. 9. 2021, hrad Veveří#}
+{#        </div>#}
+{#        <div class="col menu-toggler">#}
+{#            menu#}
+{#        </div>#}
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+{#    <footer>#}
+{#        <div class="container-40">#}
+{#            <p>#}
+{#                All the lieutenant commanders teleport clear, modern mermaids. Red alert, fantastic devastation! Dosis view from minds like most unusual mermaids. It is a real anomaly, sir. Chemical ellipses lead to the flight. Patiently question a girl. Malfunction bravely like a brave space.#}
+{#            </p>#}
+{#        </div>#}
+{#    </footer>#}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>

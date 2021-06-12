@@ -1,0 +1,28 @@
+nav {
+    position: fixed;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #165c38;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    .col {
+        a {
+            margin: 0 1rem;
+        }
+        padding: 0 1rem;
+        display: block;
+        &.desktop-menu { display: none; }
+        &.datetime { display: none; }
+        @media (min-width: 40rem) {
+            &.datetime { display: block}
+        }
+        @media (min-width: 60rem) {
+            &.desktop-menu { display: block; }
+            &.menu-toggler { display: none; }
+        }
+    }
+}

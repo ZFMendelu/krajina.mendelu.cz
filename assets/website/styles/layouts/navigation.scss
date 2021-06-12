@@ -9,12 +9,14 @@ nav {
     display: flex;
     justify-content: space-between;
     z-index: 1000;
+    align-items: center;
     .col {
         a {
             margin: 0 1rem;
         }
         padding: 0 1rem;
         display: block;
+        &.logo { font-size: 1.3rem; font-weight: 700; }
         &.desktop-menu { display: none; }
         &.datetime { display: none; }
         @media (min-width: 40rem) {

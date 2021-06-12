@@ -1,22 +1,27 @@
 #homepage {
-    #hero {
-        min-height: 95vh;
+    .hero {
+        min-height: 100vh;
         padding-top: 5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        .container-40 {
-            .h2 {
-                padding-bottom: 6rem;
+        .container-40.ckeditorOutput {
+            h2 {
+                color: #000000;
             }
         }
     }
     .quote {
         padding-top: 6rem;
         padding-bottom: 5rem;
+        background-size: cover;
+        background-position: center center;
+        background-color: #165c38;
+        min-height: 28rem;
         p {
             font-size: 2rem;
             line-height: 130%;
+            color: #ffffff;
         }
     }
     .text {
@@ -25,5 +30,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+    .authors {
+        text-align: center;
+        padding: 7rem 0;
+        max-width: 70rem;
+        margin: auto;
+        img.author {
+            max-height: 150px;
+        }
     }
 }

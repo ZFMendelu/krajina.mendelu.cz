@@ -22,7 +22,7 @@ security:
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt)|css|img|js)/
             security: false
         admin:
             pattern: ^/admin(\/|$)

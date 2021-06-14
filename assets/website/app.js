@@ -15,7 +15,7 @@ import './bootstrap';
 
 
 
-let showMenu = document.querySelector('.menu-toggler')
+let showMenu = document.querySelector('a.menu-toggler')
 showMenu.addEventListener('click', ()=>{
     let menu =  document.querySelector('nav .menu');
     menu.classList.toggle('displayed');

@@ -15,8 +15,11 @@ import './bootstrap';
 
 
 
-let showMenu = document.querySelector('a.menu-toggler')
-showMenu.addEventListener('click', ()=>{
-    let menu =  document.querySelector('nav .menu');
-    menu.classList.toggle('displayed');
-});
+let showMenu = document.querySelectorAll('a.menu-toggler')
+showMenu.forEach((e)=>{
+    e.addEventListener('click', ()=>{
+        let menu =  document.querySelector('nav .menu');
+        menu.classList.toggle('displayed');
+    });
+})
+

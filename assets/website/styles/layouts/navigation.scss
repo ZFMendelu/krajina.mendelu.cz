@@ -9,7 +9,7 @@ nav {
     display: flex;
     justify-content: space-between;
     z-index: 1000;
-    align-items: center;
+    align-items: baseline;
     .col {
         a {
             margin: 0 1rem;
@@ -22,7 +22,7 @@ nav {
         @media (min-width: 40rem) {
             &.datetime { display: block}
         }
-        @media (min-width: 60rem) {
+        @media (min-width: 70rem) {
             &.desktop-menu { display: block; }
             &.menu-toggler { display: none; }
         }

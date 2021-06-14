@@ -10,3 +10,13 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+
+
+
+
+let showMenu = document.querySelector('.menu-toggler')
+showMenu.addEventListener('click', ()=>{
+    let menu =  document.querySelector('nav .menu');
+    menu.classList.toggle('displayed');
+});

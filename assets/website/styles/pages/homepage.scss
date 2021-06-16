@@ -28,6 +28,11 @@
             color: #ffffff;
         }
     }
+    @supports (-webkit-touch-callout: none) {
+        .quote {
+            background-attachment: initial;
+        }
+    }
     .text {
         padding: 2rem 0;
         display: flex;

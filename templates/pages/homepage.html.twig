@@ -6,7 +6,7 @@
 {#        {{ dump() }}#}
         {% for block in content.blocks %}
 {#            {{ dump(block) }}#}
-            {% if (block.id is not empty)  %}
+            {% if (block.id is defined )  %}
                 {% set blockid = 'id="'~block.id~'"'  %}
             {% else %}
                 {% set blockid = ""  %}
@@ -23,8 +23,12 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'separator' %}
+                <div style="min-height: {{ block.size }}rem" {{ blockid|raw }}>&nbsp;</div>
+            {% endif %}
+
             {% if block.type == 'quote' %}
-                <div class="quote" style="background-image: url({{ block.image.thumbnails['2000x500'] }})" {{ blockid|raw }}>
+                <div class="quote" style="background-image: url({{ block.image.thumbnails['2000x1100'] }})" {{ blockid|raw }}>
                     <div class="container-40">
                         {{ block.text|raw }}
                     </div>

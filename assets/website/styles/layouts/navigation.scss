@@ -18,7 +18,7 @@ nav {
         }
         padding: 0 1rem;
         display: block;
-        &.logo { font-size: 1.3rem; font-weight: 700; }
+        &.logo { font-size: 1.3rem; font-weight: 400; }
         &.menu {
             display: none;
             padding: 1rem;
@@ -52,4 +52,10 @@ nav {
             &.menu-toggler { display: none; }
         }
     }
+    @media (prefers-color-scheme: dark) {
+        background-color: #111111;
+        color: #ffffff;
+    }
 }
+
+

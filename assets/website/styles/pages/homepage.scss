@@ -16,6 +16,7 @@
         padding-bottom: 5rem;
         background-size: cover;
         background-position: center center;
+        background-attachment: fixed;
         background-color: #165c38;
         min-height: 35rem;
         display: flex;
@@ -25,12 +26,10 @@
             font-size: 2rem;
             line-height: 130%;
             color: #ffffff;
-            text-shadow: 0 0 20px #000000, 2px 2px 5px #000000, -2px 2px 5px #000000, 2px -2px 5px #000000, -2px -2px 5px #000000  ;
         }
     }
     .text {
-        min-height: 80vh;
-        padding: 7rem 0;
+        padding: 2rem 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -45,4 +44,15 @@
             max-height: 150px;
         }
     }
+
+
+    @media (prefers-color-scheme: dark) {
+    .hero {
+        .container-40.ckeditorOutput {
+            h2 {
+                color: #ffffff;
+            }
+        }
+    }
+}
 }

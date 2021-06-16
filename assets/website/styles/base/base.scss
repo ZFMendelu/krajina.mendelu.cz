@@ -20,3 +20,10 @@
 .green {
     color: #165c38;
 }
+
+
+@media (prefers-color-scheme: dark) {
+    .green {
+        color: #0cb35d;
+    }
+}

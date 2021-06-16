@@ -95,6 +95,30 @@
                 </type>
 
 
+
+                <type name="separator">
+                    <meta><title lang="en">separator</title></meta>
+                    <properties>
+                        <property name="id" type="text_line" colspan="6">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="size" type="single_select" colspan="6">
+                            <meta> <title lang="en">Size</title> </meta>
+                            <params>
+                                <param name="default_value" value="8"/>
+                                <param name="values" type="collection">
+                                    <param name="20"> <meta> <title lang="en">20rem</title> </meta> </param>
+                                    <param name="16"> <meta> <title lang="en">16rem</title> </meta> </param>
+                                    <param name="12"> <meta> <title lang="en">12rem</title> </meta> </param>
+                                    <param name="8"> <meta> <title lang="en">8rem</title> </meta> </param>
+                                    <param name="4"> <meta> <title lang="en">4rem</title> </meta> </param>
+                                </param>
+                            </params>
+                        </property>
+                    </properties>
+                </type>
+
+
                 <type name="opening_hours">
                     <meta><title lang="en">opening hours</title></meta>
                     <properties>

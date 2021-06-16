@@ -10,7 +10,7 @@ body, p, h1, h2, h3, h4, h5 {
 
 body {
     color: #333333;
-    background: #ffffff url("../../img/vrstevnice.jpg") top center;
+    background: #ffffff url("../../img/vrstevnice.svg") fixed top center;
     background-size: 100% auto;
 }
 
@@ -30,10 +30,10 @@ hr {
     background: #333333;
 }
 
-p { font-size: 1rem; padding-bottom: 1.1rem; line-height: 1.6rem; max-width: 45rem;}
+p { font-size: 1.2rem; padding-bottom: 1.5rem; line-height: 2.4rem; max-width: 45rem;}
 .h0 { font-size: 3rem;   padding-bottom: 4rem; line-height: 4rem; font-weight: 900; }
-.h1 { font-size: 4.3rem; padding-bottom: 3rem; line-height: 5rem; font-weight: 400;}
-.h2 { font-size: 2.5rem; padding-bottom: 3rem; line-height: 3.15rem; font-weight:400; }
+.h1 { font-size: 4.3rem; padding-bottom: 3rem; line-height: 5rem; font-weight: 400; }
+.h2 { font-size: 2.5rem; padding-bottom: 3rem; line-height: 3.15rem; font-weight:400; color: #165c38; }
 .h3 { font-size: 1.5rem; padding-bottom: 1rem; font-weight: 700;}
 .h4 { font-size: 1.1rem; padding-bottom: 1rem;}
 
@@ -47,7 +47,7 @@ p { font-size: 1rem; padding-bottom: 1.1rem; line-height: 1.6rem; max-width: 45r
 
 
 .ckeditorOutput {
-    p { font-size: 1rem; padding-bottom: 1.1rem; line-height: 1.6rem; max-width: 45rem;}
+    p { font-size: 1.2rem; padding-bottom: 1.5rem; line-height: 2.4rem; max-width: 45rem;}
     h1 { font-size: 4.3rem; padding-bottom: 3rem; line-height: 5rem; font-weight: 400;}
     h2 { font-size: 2.5rem; padding-bottom: 3rem; line-height: 3.15rem; font-weight:400; color: #165c38; }
     h3 { font-size: 1.5rem; padding-bottom: 1rem; font-weight: 700;}
@@ -63,6 +63,7 @@ a {
     position: relative;
     transition: all .2s;
     padding: .1rem .3rem;
+    z-index: 200;
     &::after {
         content: ' ';
         position: absolute;
@@ -93,5 +94,25 @@ a {
     &.underlined::after {
         width: 100%;
         right: 0;
+    }
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111111;
+        color: #ffffff;
+    }
+    .h2 { color: #0cb35d; }
+    .ckeditorOutput {
+        h2 { color: #0cb35d; }
+    }
+    a {
+        color: #ffffff;
+        &::after {
+            background: #0cb35d;
+        }
     }
 }

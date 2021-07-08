@@ -215,6 +215,11 @@
                             </meta>
                             <tag name="sulu.block_preview" priority="1024"/>
                         </property>
+                        <property name="description" type="text_editor">
+                            <meta>
+                                <title lang="en">Description</title>
+                            </meta>
+                        </property>
                         <block name="sub_blocks_2" default-type="point" minOccurs="0">
                             <meta> <title lang="en">Points</title> </meta>
                             <params> <param name="add_button_text"> <meta> <title lang="en">Add point</title> </meta> </param> </params>

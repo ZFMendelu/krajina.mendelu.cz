@@ -3,6 +3,7 @@
 {% block content %}
     <div id="homepage">
 
+        {% set matterport = false %}
 {#        {{ dump() }}#}
         {% for block in content.blocks %}
 {#            {{ dump(block) }}#}
@@ -76,15 +77,41 @@
                     <img class="map" src="{{ block.map.thumbnails['map.jpg'] }}" alt="">
                     {% for sub_block in block.sub_blocks_2  %}
                         {% if sub_block.type == 'point' %}
-                            <a class="point"
+                            {% set matterport = true %}
+                            <div class="point matterport-point"
                                style="top: {{ sub_block.coor_y }}%; left: {{ sub_block.coor_x }}%; background-color: {{ sub_block.color }}"
-                                href="{{ sub_block.link }}" target="_blank"
-                            ></a>
+                               matterport-data="{{ sub_block.link }}"
+                            ></div>
                         {% endif %}
                     {% endfor %}
+                </div>
+                <div class="map-description">
+                    <div class="container-40 ckeditorOutput">
+                        {{ block.description|raw }}
+                    </div>
+                    <div class="container-40 pills">
+                        {% for sub_block in block.sub_blocks_2  %}
+                            {% if sub_block.type == 'point' %}
+                                {% set matterport = true %}
+                                <div class="pill matterport-point"
+                                   style="background-color: {{ sub_block.color }}"
+                                   matterport-data="{{ sub_block.link }}"
+                                >{{ sub_block.name }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             {% endif %}
 
         {% endfor %}
     </div>
+
+    {% if matterport %}
+        <div class="matterport-embed">
+            <div class="btn-close">zavřít</div>
+            <iframe src="" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+        </div>
+    {% endif %}
+
+
 {% endblock %}

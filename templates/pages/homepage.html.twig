@@ -71,6 +71,20 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'map' %}
+                <div class="map" {{ blockid|raw }}>
+                    <img class="map" src="{{ block.map.thumbnails['map.jpg'] }}" alt="">
+                    {% for sub_block in block.sub_blocks_2  %}
+                        {% if sub_block.type == 'point' %}
+                            <a class="point"
+                               style="top: {{ sub_block.coor_y }}%; left: {{ sub_block.coor_x }}%; background-color: {{ sub_block.color }}"
+                                href="{{ sub_block.link }}" target="_blank"
+                            ></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
         {% endfor %}
     </div>
 {% endblock %}

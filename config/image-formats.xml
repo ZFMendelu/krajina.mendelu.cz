@@ -16,6 +16,17 @@
         </options>
     </format>
 
+    <format key="map">
+        <meta>
+            <title lang="en">author square</title>
+        </meta>
+
+        <scale x="700" y="700"/>
+        <options>
+            <option name="jpeg_quality">80</option>
+        </options>
+    </format>
+
     <format key="author_square">
         <meta>
             <title lang="en">author square</title>

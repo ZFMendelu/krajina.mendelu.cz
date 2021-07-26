@@ -1,0 +1,13 @@
+a.link-block {
+    background: #00000008;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    &::after {
+        display: none;
+    }
+    &:hover {
+        background: #165C3819;
+    }
+}

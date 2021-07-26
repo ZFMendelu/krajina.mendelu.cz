@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div id="catalogue-section">
+        <div class="container-40 ckeditorOutput">
+            <div class="breadcrumbs">
+                {% for item in sulu_breadcrumb(uuid) %}
+                    <a href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                    {% if not loop.last %}
+                        &nbsp; / &nbsp;
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+            <h1 class="h1">{{ content.title }}</h1>
+            {{ content.perex|raw }}
+        </div>
+
+
+        {% for block in content.blocks %}
+            {% if (block.id is defined )  %}
+                {% set blockid = 'id="'~block.id~'"'  %}
+            {% else %}
+                {% set blockid = ""  %}
+            {% endif %}
+
+            {% if block.type == 'text'  %}
+                <div class="text" {{ blockid|raw }}>
+                    <div class="container-40 ckeditorOutput">
+                        {{ block.text|raw }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'highlighted_number'  %}
+                <div class="container-40 highlighted_number" {{ blockid|raw }}>
+                    <span class="number">{{ block.number|raw }}</span>
+                    <br>
+                    <p>{{ block.text|raw }}</p>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'image'  %}
+                <div class="image" {{ blockid|raw }}>
+                    <img src="{{ block.image.thumbnails['2000x1100'] }}" alt="{{ block.image.title }}"/>
+                    <div class="container-40">
+                        <p>{{ block.description|raw }}</p>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'h3_icon'  %}
+                <div class="container-40 h3_icon" {{ blockid|raw }}>
+                    <img src="{{ block.icon.thumbnails['2000x1100'] }}" alt="{{ block.icon.title }}"/>
+                    <h3 class="h3">{{ block.title|raw }}</h3>
+                </div>
+            {% endif %}
+
+
+        {% endfor %}
+
+
+    </div>
+{% endblock %}

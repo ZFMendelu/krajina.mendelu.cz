@@ -126,6 +126,16 @@
                         </property>
                     </properties>
                 </type>
+
+                <type name="i_want_to_help">
+                    <meta><title lang="en">I wanna rock</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                    </properties>
+                </type>
+
             </types>
         </block>
 

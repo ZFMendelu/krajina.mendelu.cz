@@ -57,6 +57,47 @@
             {% endif %}
 
 
+            {% if block.type == 'i_want_to_help'  %}
+                <div class="container-40 text-center" {{ blockid|raw }}>
+                    <h2 class="h2">Chci pomoct krajině</h2>
+                </div>
+                <div class="iwth">
+                    <div class="col first">
+                        <h3 class="h3">Vlastním půdu</h3>
+                        <hr>
+                        <a class="link-block"  href="#a">
+                            <p>Chci hospodařit sám</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="link-block"  href="#a">
+                            <p>Svou půdu pronajímám</p>
+                            <p class="text-comment">Můžeš zajistit šetrné hospodaření na své půdě!</p>
+                        </a>
+                        <a class="link-block"  href="#a">
+                            <p>Chci vytvořit něco smysluplného</p>
+                            <p class="text-comment">Můžeš zvýšit pestrost krajiny!</p>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <h3 class="h3">Nevlastním půdu</h3>
+                        <hr>
+                        <a class="link-block"  href="#a">
+                            <p>Hospodařímna cizí půdě</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="link-block"  href="#a">
+                            <p>Chci podpořit dobré hospodaření</p>
+                            <p class="text-comment">Podpoř místní iniciativy a farmáře!</p>
+                        </a>
+                        <a class="link-block"  href="#a">
+                            <p>Chci se podílet na zlepšení krajiny</p>
+                            <p class="text-comment">Daruj svůj čas a staň se dobrovolníkem!</p>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+
+
         {% endfor %}
 
 

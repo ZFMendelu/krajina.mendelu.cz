@@ -23,8 +23,8 @@
                     'short_description': 'short_description',
                 }) %}
                 <a class="link-block"  href="{{ sulu_content_path(item.url) }}">
-                    <h3 class="h3">{{ item.title }}</h3>
-                    <p>{{ page_data.content.short_description }}</p>
+                    <p>{{ item.title }}</p>
+                    <p class="text-comment">{{ page_data.content.short_description }}</p>
                 </a>
             {% endfor %}
             <hr>

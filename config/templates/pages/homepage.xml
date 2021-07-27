@@ -276,6 +276,21 @@
                     </properties>
                 </type>
 
+                <type name="survey_results">
+                    <meta><title lang="en">survey results</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="key" type="text_line">
+                            <meta>
+                                <title lang="en">survey-key</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                    </properties>
+                </type>
+
 
             </types>
         </block>

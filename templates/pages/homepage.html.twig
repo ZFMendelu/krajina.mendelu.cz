@@ -90,6 +90,12 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'survey_results' %}
+                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}">
+
+                </div>
+            {% endif %}
+
         {% endfor %}
     </div>
 
@@ -99,4 +105,9 @@
     </div>
 
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('homepage') }}
 {% endblock %}

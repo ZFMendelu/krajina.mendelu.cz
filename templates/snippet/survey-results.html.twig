@@ -1,0 +1,36 @@
+
+{#{% extends "base.html.twig" %}#}
+
+{#{% block content %}#}
+
+{#<br><br><br>#}
+{#    #}
+
+{#    {{ dump(rollups) }}#}
+<div class="survey-slider">
+    {% for id, question in rollups %}
+        <div class="survey-slide">
+{#            {{ dump(question) }}#}
+            <h3 class="h3">
+                {{ question.metadata.text }}
+            </h3>
+
+            {% if question.metadata.display_type is defined and question.metadata.display_type == 'numerical' %}
+                <p>{{ question.summary_data[0].mean }} Kč</p>
+            {% else %}
+                {% for n, row in question.rows %}
+                    <div class="progress">
+                        <div class="bar" style="width: {{ question.summary_data[n].percentage.total }}%; "></div>
+                    </div>
+                    <div class="slide-description">
+                        <p class="left">{{ row.text }}</p>
+                        <p class="right text-comment">{{ question.summary_data[n].total }} / {{ question.summary_data[n].percentage.total }} %</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+
+{#{% endblock %}#}

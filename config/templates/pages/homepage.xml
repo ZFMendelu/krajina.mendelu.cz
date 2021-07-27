@@ -261,9 +261,9 @@
                                             </params>
                                         </property>
 
-                                        <property name="link" type="text_line">
+                                        <property name="link" type="single_page_selection">
                                             <meta>
-                                                <title lang="en">link</title>
+                                                <title lang="en">Link</title>
                                             </meta>
                                         </property>
 

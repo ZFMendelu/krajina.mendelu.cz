@@ -21,6 +21,19 @@
     color: #165c38;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-comment {
+    color: #888888;
+    font-style: italic;
+}
+
 
 @media (prefers-color-scheme: dark) {
     .green {

@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div id="catalogue">
+        <div class="container-40 ckeditorOutput">
+            <div class="breadcrumbs">
+                {% for item in sulu_breadcrumb(uuid) %}
+                    <a href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                    {% if not loop.last %}
+                        &nbsp; / &nbsp;
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+            <h1 class="h1">{{ content.title }}</h1>
+            {{ content.article|raw }}
+        </div>
+        <div class="container-40">
+            <h2 class="h2">Kapitoly katalogu</h2>
+            {% for item in sulu_navigation_flat(uuid) %}
+                {% set page_data = sulu_content_load(item.uuid, {
+                    'title': 'title',
+                    'short_description': 'short_description',
+                }) %}
+                <a class="link-block"  href="{{ sulu_content_path(item.url) }}">
+                    <p>{{ item.title }}</p>
+                    <p class="text-comment">{{ page_data.content.short_description }}</p>
+                </a>
+            {% endfor %}
+            <hr>
+            <a href="/pdf/catalog_complete.pdf" target="_blank"> Kompletní katalog ke stažení (100mb)</a>
+        </div>
+
+
+    </div>
+{% endblock %}

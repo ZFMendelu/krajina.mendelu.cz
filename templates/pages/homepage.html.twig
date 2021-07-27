@@ -3,7 +3,6 @@
 {% block content %}
     <div id="homepage">
 
-        {% set matterport = false %}
 {#        {{ dump() }}#}
         {% for block in content.blocks %}
 {#            {{ dump(block) }}#}
@@ -77,28 +76,16 @@
                     <img class="map" src="{{ block.map.thumbnails['map.jpg'] }}" alt="">
                     {% for sub_block in block.sub_blocks_2  %}
                         {% if sub_block.type == 'point' %}
-                            {% set matterport = true %}
-                            <div class="point matterport-point"
+                            {% set page = sulu_content_load(sub_block.link) %}
+                            <a class="point" href="{{ page.content.url }}"
                                style="top: {{ sub_block.coor_y }}%; left: {{ sub_block.coor_x }}%; background-color: {{ sub_block.color }}"
-                               matterport-data="{{ sub_block.link }}"
-                            ></div>
+                            ></a>
                         {% endif %}
                     {% endfor %}
                 </div>
                 <div class="map-description">
                     <div class="container-40 ckeditorOutput">
                         {{ block.description|raw }}
-                    </div>
-                    <div class="container-40 pills">
-                        {% for sub_block in block.sub_blocks_2  %}
-                            {% if sub_block.type == 'point' %}
-                                {% set matterport = true %}
-                                <div class="pill matterport-point"
-                                   style="background-color: {{ sub_block.color }}"
-                                   matterport-data="{{ sub_block.link }}"
-                                >{{ sub_block.name }}</div>
-                            {% endif %}
-                        {% endfor %}
                     </div>
                 </div>
             {% endif %}

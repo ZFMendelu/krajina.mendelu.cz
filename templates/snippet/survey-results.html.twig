@@ -16,7 +16,7 @@
             </h3>
 
             {% if question.metadata.display_type is defined and question.metadata.display_type == 'numerical' %}
-                <p>v průměru: {{ question.summary_data[0].mean }} Kč</p>
+                <p>v průměru: {{ question.summary_data[0].mean|round(2) }} Kč</p>
             {% else %}
                 {% for n, row in question.rows %}
                     <div class="progress">
@@ -24,13 +24,19 @@
                     </div>
                     <div class="slide-description">
                         <p class="left">{{ row.text }}</p>
-                        <p class="right text-comment">{{ question.summary_data[n].total }} / {{ question.summary_data[n].percentage.total }} %</p>
+                        <p class="right text-comment">{{ question.summary_data[n].total }} / {{ question.summary_data[n].percentage.total|round(2) }} %</p>
                     </div>
                 {% endfor %}
             {% endif %}
         </div>
     {% endfor %}
 </div>
+<div class="survey-dots">
+    {% for id, question in rollups %}
+        <div class="survey-dot siema-dot {{ (loop.index0 == 0) ? 'selected' }}" data-siema-id="{{ loop.index0 }}"></div>
+    {% endfor %}
+</div>
+
 
 
 {#{% endblock %}#}

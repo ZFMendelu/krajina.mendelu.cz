@@ -92,7 +92,20 @@
 
             {% if block.type == 'survey_results' %}
                 <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}">
+                    <img src="{{ asset("build/website/img/spinner.svg") }}" class="survey-spinner" alt="" style="height: 10rem">
 
+                </div>
+                <div class="container-40">
+                    <div class="survey-btns">
+                        <div class="btn siema-prev">
+                            <img src="{{ asset("build/website/img/prev.svg") }}" alt="" style="height: 1.2rem">
+                        </div>
+                        <a class="btn" href="{{ block.results_url }}" target="_blank">Všechny výsledky</a>
+                        <a class="btn primary text-center" href="{{ block.survey_url }}" target="_blank">Vyplnit anketu</a>
+                        <div class="btn siema-next">
+                            <img src="{{ asset("build/website/img/next.svg") }}" alt="" style="height: 1.2rem">
+                        </div>
+                    </div>
                 </div>
             {% endif %}
 

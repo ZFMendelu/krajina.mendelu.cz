@@ -1,9 +1,10 @@
-a.link-block {
+.btn, a.btn {
     background: #00000008;
     border-radius: .5rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    display: block;
+    display: inline-block;
+    cursor: pointer;
     &::after {
         display: none;
     }
@@ -15,5 +16,12 @@ a.link-block {
     }
     p {
         padding-bottom: 0;
+    }
+    &.block {
+        display: block;
+    }
+    &.primary {
+        background: #165C38;
+        color: #ffffff;
     }
 }

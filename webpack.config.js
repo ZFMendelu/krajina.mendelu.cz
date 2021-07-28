@@ -9,7 +9,10 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/build/website/')
     .setPublicPath('/build/website')
+
     .addEntry('app', './assets/website/app.js')
+    .addEntry('homepage', './assets/website/js/homepage.js')
+
     .enableStimulusBridge('./assets/website/controllers.json')
     .copyFiles({
         from: './assets/website/img',

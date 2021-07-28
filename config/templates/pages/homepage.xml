@@ -294,11 +294,15 @@
                             </meta>
                             <tag name="sulu.block_preview" priority="1024"/>
                         </property>
-                        <property name="key" type="text_line">
+                        <property name="key" type="text_line" colspan="6">
                             <meta>
                                 <title lang="en">survey resutls key</title>
                             </meta>
-                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="locale" type="text_line" colspan="6">
+                            <meta>
+                                <title lang="en">survey resutls locale</title>
+                            </meta>
                         </property>
                     </properties>
                 </type>

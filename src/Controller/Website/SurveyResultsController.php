@@ -13,14 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class SurveyResultsController extends AbstractController
 {
     /**
-     * @Route("/data/survey-results/{key}", name="index")
+     * @Route("/data/survey-results/{locale}/{key}", name="index")
      * @return Response
      */
-    public function index($key)
+    public function index($locale, $key)
     {
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://www.surveymonkey.com/results/" . $key . "/summary/data.js");
+        curl_setopt($ch, CURLOPT_URL, "https://" . $locale . ".surveymonkey.com/results/" . $key . "/summary/data.js");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $data = curl_exec($ch);
         curl_close($ch);

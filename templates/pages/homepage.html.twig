@@ -91,7 +91,7 @@
             {% endif %}
 
             {% if block.type == 'survey_results' %}
-                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}">
+                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}" data-locale="{{ block.locale }}">
                     <img src="{{ asset("build/website/img/spinner.svg") }}" class="survey-spinner" alt="" style="height: 10rem">
 
                 </div>

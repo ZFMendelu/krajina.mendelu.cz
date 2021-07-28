@@ -22,8 +22,9 @@ function onSlideChange() {
 
 for (const spot of surveySpots) {
     let key = spot.getAttribute('data-key')
+    let locale = spot.getAttribute('data-locale')
     console.log(key)
-    axios.get("/data/survey-results/"+key)
+    axios.get("/data/survey-results/"+locale+"/"+key)
     .then( (response) => {
         spot.innerHTML = response.data
 

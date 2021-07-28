@@ -23,7 +23,7 @@ function onSlideChange() {
 for (const spot of surveySpots) {
     let key = spot.getAttribute('data-key')
     console.log(key)
-    axios.get("http://127.0.0.1:8000/data/survey-results/"+key)
+    axios.get("/data/survey-results/"+key)
     .then( (response) => {
         spot.innerHTML = response.data
 

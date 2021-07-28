@@ -16,7 +16,7 @@
             </h3>
 
             {% if question.metadata.display_type is defined and question.metadata.display_type == 'numerical' %}
-                <p>{{ question.summary_data[0].mean }} Kč</p>
+                <p>v průměru: {{ question.summary_data[0].mean }} Kč</p>
             {% else %}
                 {% for n, row in question.rows %}
                     <div class="progress">

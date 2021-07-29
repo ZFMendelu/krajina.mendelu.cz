@@ -24,6 +24,10 @@
                 {% set blockid = ""  %}
             {% endif %}
 
+            {% if block.type == 'separator' %}
+                <div style="min-height: {{ block.size }}rem" {{ blockid|raw }}>&nbsp;</div>
+            {% endif %}
+
             {% if block.type == 'text'  %}
                 <div class="text" {{ blockid|raw }}>
                     <div class="container-40 ckeditorOutput">
@@ -42,16 +46,18 @@
 
             {% if block.type == 'image'  %}
                 <div class="image" {{ blockid|raw }}>
-                    <img src="{{ block.image.thumbnails['2000x1100'] }}" alt="{{ block.image.title }}"/>
+                    <img src="{{ block.image.thumbnails['catalogue-1200'] }}" alt="{{ block.image.title }}"/>
+                    {% if block.description is not empty %}
                     <div class="container-40">
                         <p>{{ block.description|raw }}</p>
                     </div>
+                    {% endif %}
                 </div>
             {% endif %}
 
             {% if block.type == 'h3_icon'  %}
                 <div class="container-40 h3_icon" {{ blockid|raw }}>
-                    <img src="{{ block.icon.thumbnails['2000x1100'] }}" alt="{{ block.icon.title }}"/>
+                    <img src="{{ block.icon.thumbnails['catalogue-1200'] }}" alt="{{ block.icon.title }}"/>
                     <h3 class="h3">{{ block.title|raw }}</h3>
                 </div>
             {% endif %}

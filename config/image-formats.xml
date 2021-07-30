@@ -34,9 +34,9 @@
             <title lang="en">author square</title>
         </meta>
 
-        <scale x="700" y="700"/>
+        <scale x="700"/>
         <options>
-            <option name="jpeg_quality">80</option>
+            <option name="jpeg_quality">100</option>
         </options>
     </format>
 

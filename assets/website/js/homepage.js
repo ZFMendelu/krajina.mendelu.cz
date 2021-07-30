@@ -24,7 +24,7 @@ for (const spot of surveySpots) {
     let key = spot.getAttribute('data-key')
     let locale = spot.getAttribute('data-locale')
     console.log(key)
-    axios.get("/data/survey-results/"+locale+"/"+key)
+    axios.get("/data/survey-results/"+locale+"/"+key+"/carousel")
     .then( (response) => {
         spot.innerHTML = response.data
 

@@ -1,7 +1,50 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <h1>{{ content.title }}</h1>
+    <div id="default">
+        <div class="container-40 ckeditorOutput">
+            <div class="breadcrumbs">
+                {% for item in sulu_breadcrumb(uuid) %}
+                    <a href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                    {% if not loop.last %}
+                        &nbsp; / &nbsp;
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <br>
+            <h1 class="h1">{{ content.title }}</h1>
+            {{ content.perex|raw }}
+        </div>
 
-    {{ content.article|raw }}
+        {% for block in content.blocks %}
+            {% if (block.id is defined ) %}
+                {% set blockid = 'id="'~block.id~'"' %}
+            {% else %}
+                {% set blockid = "" %}
+            {% endif %}
+
+            {% if block.type == 'survey_results' %}
+                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}"
+                     data-locale="{{ block.locale }}">
+                    <img src="{{ asset("build/website/img/spinner.svg") }}" class="survey-spinner" alt=""
+                         style="height: 10rem">
+                    <p class="text-center text-comment">Načítám aktuální výsledky</p>
+                </div>
+                <div class="container-40">
+                    <div class="survey-btns">
+                        <a class="btn secondary" href="{{ block.results_url }}" target="_blank">Všechny výsledky</a>
+                        <a class="btn primary text-center" href="{{ block.survey_url }}" target="_blank">Vyplnit
+                            anketu</a>
+                    </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('default-page') }}
 {% endblock %}

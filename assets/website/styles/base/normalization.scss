@@ -113,8 +113,10 @@ a {
     }
     a {
         color: #ffffff;
-        &::after {
-            background: #0cb35d;
+        &:hover{
+            &::after {
+                background: #0cb35d;
+            }
         }
     }
 }

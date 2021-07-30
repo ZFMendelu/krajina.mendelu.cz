@@ -12,6 +12,7 @@ Encore
 
     .addEntry('app', './assets/website/app.js')
     .addEntry('homepage', './assets/website/js/homepage.js')
+    .addEntry('default-page', './assets/website/js/default-page.js')
 
     .enableStimulusBridge('./assets/website/controllers.json')
     .copyFiles({

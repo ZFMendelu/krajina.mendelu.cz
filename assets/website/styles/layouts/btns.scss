@@ -25,3 +25,13 @@
         color: #ffffff;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .btn, a.btn {
+        background: #ffffff08;
+        &:hover {
+            color:#ffffff;
+            background: #165C38FF;
+        }
+    }
+}

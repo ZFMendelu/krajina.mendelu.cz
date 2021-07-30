@@ -31,11 +31,13 @@
         </div>
     {% endfor %}
 </div>
-<div class="survey-dots">
-    {% for id, question in rollups %}
-        <div class="survey-dot siema-dot {{ (loop.index0 == 0) ? 'selected' }}" data-siema-id="{{ loop.index0 }}"></div>
-    {% endfor %}
-</div>
+{% if mode == "carousel" %}
+    <div class="survey-dots">
+        {% for id, question in rollups %}
+            <div class="survey-dot siema-dot {{ (loop.index0 == 0) ? 'selected' }}" data-siema-id="{{ loop.index0 }}"></div>
+        {% endfor %}
+    </div>
+{% endif %}
 
 
 

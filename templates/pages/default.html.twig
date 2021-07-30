@@ -24,17 +24,15 @@
             {% endif %}
 
             {% if block.type == 'survey_results' %}
-                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}"
-                     data-locale="{{ block.locale }}">
+                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}" data-max="{{ block.max_questions }}" data-locale="{{ block.locale }}">
                     <img src="{{ asset("build/website/img/spinner.svg") }}" class="survey-spinner" alt=""
                          style="height: 10rem">
                     <p class="text-center text-comment">Načítám aktuální výsledky</p>
                 </div>
                 <div class="container-40">
                     <div class="survey-btns">
-                        <a class="btn secondary" href="{{ block.results_url }}" target="_blank">Všechny výsledky</a>
-                        <a class="btn primary text-center" href="{{ block.survey_url }}" target="_blank">Vyplnit
-                            anketu</a>
+                        <a class="btn secondary" href="{{ block.results_url }}" target="_blank"> Všechny výsledky</a>
+                        <a class="btn primary text-center" href="{{ block.survey_url }}" target="_blank">Vyplnit anketu</a>
                     </div>
                 </div>
             {% endif %}

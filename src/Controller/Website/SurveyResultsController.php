@@ -13,10 +13,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class SurveyResultsController extends AbstractController
 {
     /**
-     * @Route("/data/survey-results/{locale}/{key}/{mode}", name="index")
+     * @Route("/data/survey-results/{locale}/{key}/{max}/{mode}", name="index")
      * @return Response
      */
-    public function index($locale, $key, $mode = null)
+    public function index($locale, $key, $max, $mode = null)
     {
 
         $ch = curl_init();
@@ -34,7 +34,8 @@ class SurveyResultsController extends AbstractController
         return $this->render('snippet/survey-results.html.twig', [
             "data" => $data,
             "rollups" => $rollups,
-            "mode" => $mode
+            "mode" => $mode,
+            "max" => $max
         ]);
 
     }

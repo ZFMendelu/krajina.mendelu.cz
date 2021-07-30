@@ -158,6 +158,15 @@
                     </properties>
                 </type>
 
+                <type name="code">
+                    <meta><title lang="en">code block</title></meta>
+                    <properties>
+                        <property name="code" type="text_area">
+                            <meta> <title lang="en">code</title> </meta>
+                        </property>
+                    </properties>
+                </type>
+
             </types>
         </block>
 

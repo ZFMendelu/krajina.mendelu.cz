@@ -294,6 +294,15 @@
                             </meta>
                             <tag name="sulu.block_preview" priority="1024"/>
                         </property>
+                        <property name="max_questions" type="number">
+                            <meta>
+                                <title lang="en">Max displayed questions</title>
+                            </meta>
+                            <params>
+                                <param name="min" value="0"/>
+                                <param name="step" value="1"/>
+                            </params>
+                        </property>
                         <property name="key" type="text_line" colspan="6">
                             <meta>
                                 <title lang="en">survey resutls key</title>

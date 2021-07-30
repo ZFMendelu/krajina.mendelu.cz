@@ -23,8 +23,9 @@ function onSlideChange() {
 for (const spot of surveySpots) {
     let key = spot.getAttribute('data-key')
     let locale = spot.getAttribute('data-locale')
+    let max = spot.getAttribute('data-max')
     console.log(key)
-    axios.get("/data/survey-results/"+locale+"/"+key+"/carousel")
+    axios.get("/data/survey-results/"+locale+"/"+key+"/"+max+"/carousel")
     .then( (response) => {
         spot.innerHTML = response.data
 

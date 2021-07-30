@@ -8,7 +8,7 @@
 
 {#    {{ dump(rollups) }}#}
 <div class="survey-slider">
-    {% for id, question in rollups %}
+    {% for id, question in rollups|slice(0, max) %}
         <div class="survey-slide">
 {#            {{ dump(question) }}#}
             <h3 class="h3">
@@ -33,7 +33,7 @@
 </div>
 {% if mode == "carousel" %}
     <div class="survey-dots">
-        {% for id, question in rollups %}
+        {% for id, question in rollups|slice(0, max) %}
             <div class="survey-dot siema-dot {{ (loop.index0 == 0) ? 'selected' }}" data-siema-id="{{ loop.index0 }}"></div>
         {% endfor %}
     </div>

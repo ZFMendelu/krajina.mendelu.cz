@@ -36,6 +36,10 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'code'  %}
+                {{ block.code|raw }}
+            {% endif %}
+
             {% if block.type == 'highlighted_number'  %}
                 <div class="container-40 highlighted_number" {{ blockid|raw }}>
                     <span class="number">{{ block.number|raw }}</span>

@@ -24,6 +24,14 @@
         background: #165C38;
         color: #ffffff;
     }
+    &.disabled {
+        border: 1px solid #00000008;
+        background: none;
+        &:hover {
+            border: 1px solid #00000008;
+            background: none;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +40,12 @@
         &:hover {
             color:#ffffff;
             background: #165C38FF;
+        }
+        &.disabled {
+            &:hover {
+                border: 1px solid #ffffff08;
+                background: none;
+            }
         }
     }
 }

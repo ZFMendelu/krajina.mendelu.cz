@@ -110,6 +110,31 @@
 
         {% endfor %}
 
+        <div style="min-height: 16rem" id="kam-dal">&nbsp;</div>
+        <div class="container-40">
+            {% set parent = sulu_content_load_parent(uuid) %}
+            <h2 class="h2">Kam dál?</h2>
+            {% for item in sulu_navigation_flat(parent.uuid) %}
+                {% set page_data = sulu_content_load(item.uuid, {
+                    'title': 'title',
+                    'short_description': 'short_description',
+                }) %}
+                {% if item.uuid == uuid %}
+                    <div class="btn block disabled">
+                        <p>{{ item.title }} - jste zde</p>
+                        <p class="text-comment">{{ page_data.content.short_description }}</p>
+                    </div>
+                {% else %}
+                    <a class="btn block"  href="{{ sulu_content_path(item.url) }}">
+                        <p>{{ item.title }}</p>
+                        <p class="text-comment">{{ page_data.content.short_description }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            <hr>
+            <a href="/pdf/catalog_complete.pdf" target="_blank"> Kompletní katalog ke stažení (100mb)</a>
+        </div>
+
 
     </div>
 {% endblock %}

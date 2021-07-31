@@ -155,6 +155,11 @@
                                 </param>
                             </params>
                         </property>
+                        <property name="hr" type="checkbox">
+                            <meta>
+                                <title lang="en">Horizontal line</title>
+                            </meta>
+                        </property>
                     </properties>
                 </type>
 

@@ -25,7 +25,13 @@
             {% endif %}
 
             {% if block.type == 'separator' %}
-                <div style="min-height: {{ block.size }}rem" {{ blockid|raw }}>&nbsp;</div>
+                {% if block.hr %}
+                    <div style="min-height: {{ block.size/2 }}rem">&nbsp;</div>
+                    <hr class="w1200">
+                    <div style="min-height: {{ block.size/2 }}rem" {{ blockid|raw }}>&nbsp;</div>
+                {% else %}
+                    <div style="min-height: {{ block.size }}rem" {{ blockid|raw }}>&nbsp;</div>
+                {% endif %}
             {% endif %}
 
             {% if block.type == 'text'  %}

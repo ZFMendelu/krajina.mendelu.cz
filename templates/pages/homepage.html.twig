@@ -45,7 +45,7 @@
 
             {% if block.type == 'image'  %}
                 <div class="image" {{ blockid|raw }}>
-                    <a href="{{ block.image }}" target="_blankb">
+                    <a href="{{ block.link }}" target="_blankb">
                         <img src="{{ block.image.thumbnails['catalogue-1200'] }}" alt="{{ block.image.title }}"/>
                     </a>
                     {% if block.description is not empty %}

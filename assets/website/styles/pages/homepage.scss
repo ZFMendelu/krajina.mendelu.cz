@@ -88,6 +88,25 @@
             }
         }
     }
+    .iwth {
+        max-width: 38rem;
+        margin: auto;
+        .h3 {
+            padding-bottom: 0;
+        }
+        .col {
+            padding-bottom: 3rem;
+        }
+        @media (min-width: 60rem) {
+            max-width: 58rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            .col.first {
+                text-align: right;
+            }
+        }
+    }
 
 
     @media (prefers-color-scheme: dark) {

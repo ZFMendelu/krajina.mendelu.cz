@@ -316,6 +316,40 @@
                     </properties>
                 </type>
 
+                <type name="i_want_to_help">
+                    <meta><title lang="en">I wanna help</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                    </properties>
+                </type>
+
+
+                <type name="image">
+                    <meta><title lang="en">image</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="link" type="text_line">
+                            <meta> <title lang="en">link</title> </meta>
+                        </property>
+                        <property name="image" type="single_media_selection">
+                            <meta>
+                                <title lang="en">Image</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="description" type="text_line">
+                            <meta>
+                                <title lang="en">Description</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                    </properties>
+                </type>
+
 
             </types>
         </block>

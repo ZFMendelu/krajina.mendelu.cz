@@ -43,6 +43,19 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'image'  %}
+                <div class="image" {{ blockid|raw }}>
+                    <a href="{{ block.image }}" target="_blankb">
+                        <img src="{{ block.image.thumbnails['catalogue-1200'] }}" alt="{{ block.image.title }}"/>
+                    </a>
+                    {% if block.description is not empty %}
+                    <div class="container-40">
+                        <p class="text-comment">{{ block.description|raw }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             {% if block.type == 'opening_hours' %}
                 <div class="text" {{ blockid|raw }}>
                     <div class="container-40 ckeditorOutput">
@@ -105,6 +118,46 @@
                         <div class="btn siema-next">
                             <img src="{{ asset("build/website/img/next.svg") }}" alt="" style="height: 1.2rem">
                         </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'i_want_to_help'  %}
+                <div class="container-40 text-center" {{ blockid|raw }}>
+                    <h2 class="h2">Chci pomoct krajině</h2>
+                </div>
+                <div class="iwth">
+                    <div class="col first">
+                        <h3 class="h3">Vlastním půdu</h3>
+                        <hr>
+                        <a class="btn block"  href="/chci-hospodarit-sam">
+                            <p>Chci hospodařit sám</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="btn block"  href="/svou-pudu-pronajimam">
+                            <p>Svou půdu pronajímám</p>
+                            <p class="text-comment">Můžeš zajistit šetrné hospodaření na své půdě!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-vytvorit-neco-smysluplneho">
+                            <p>Chci vytvořit něco smysluplného</p>
+                            <p class="text-comment">Můžeš zvýšit pestrost krajiny!</p>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <h3 class="h3">Nevlastním půdu</h3>
+                        <hr>
+                        <a class="btn block"  href="/hospodarim-na-cizi-pude">
+                            <p>Hospodařímna cizí půdě</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-podporit-dobre-hospodareni">
+                            <p>Chci podpořit dobré hospodaření</p>
+                            <p class="text-comment">Podpoř místní iniciativy a farmáře!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-se-podilet-na-zlepseni-krajiny">
+                            <p>Chci se podílet na zlepšení krajiny</p>
+                            <p class="text-comment">Daruj svůj čas a staň se dobrovolníkem!</p>
+                        </a>
                     </div>
                 </div>
             {% endif %}

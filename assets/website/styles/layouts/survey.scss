@@ -87,7 +87,7 @@
 
     .survey-btns {
         @media (min-width: 40rem) {
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr;
             .btn.primary, .btn.secondary, .btn.siema-next, .btn.siema-prev {
                 grid-row: initial;
                 grid-column: initial;

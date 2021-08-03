@@ -162,6 +162,10 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'code'  %}
+                {{ block.code|raw }}
+            {% endif %}
+
         {% endfor %}
     </div>
 

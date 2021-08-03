@@ -43,10 +43,6 @@
                     <urls>
                         <url language="en">{host}</url>
                     </urls>
-                    <custom-urls>
-                        <custom-url>krajina.mendelu.cz/*</custom-url>
-                        <custom-url>krajina.zuzanafialova.cz/*</custom-url>
-                    </custom-urls>
                 </environment>
                 <environment type="stage">
                     <urls>
@@ -57,19 +53,11 @@
                     <urls>
                         <url language="en">{host}</url>
                     </urls>
-                    <custom-urls>
-                        <custom-url>krajina.mendelu.cz/*</custom-url>
-                        <custom-url>krajina.zuzanafialova.cz/*</custom-url>
-                    </custom-urls>
                 </environment>
                 <environment type="dev">
                     <urls>
                         <url language="en">{host}</url>
                     </urls>
-                    <custom-urls>
-                        <custom-url>krajina.mendelu.cz/*</custom-url>
-                        <custom-url>krajina.zuzanafialova.cz/*</custom-url>
-                    </custom-urls>
                 </environment>
             </environments>
         </portal>

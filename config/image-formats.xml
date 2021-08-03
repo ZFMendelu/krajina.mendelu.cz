@@ -5,6 +5,19 @@
 
     <!-- See: http://docs.sulu.io/en/latest/book/image-formats.html how to define image-formats -->
 
+
+    <format key="catalogue-1200">
+        <meta>
+            <title lang="en">catalogue 1200x</title>
+        </meta>
+
+        <scale x="1200"/>
+        <options>
+            <option name="jpeg_quality">80</option>
+        </options>
+    </format>
+
+
     <format key="2000x1100">
         <meta>
             <title lang="en">quote background</title>
@@ -13,6 +26,17 @@
         <scale x="2000" y="1100"/>
         <options>
             <option name="jpeg_quality">70</option>
+        </options>
+    </format>
+
+    <format key="map">
+        <meta>
+            <title lang="en">author square</title>
+        </meta>
+
+        <scale x="700"/>
+        <options>
+            <option name="jpeg_quality">100</option>
         </options>
     </format>
 

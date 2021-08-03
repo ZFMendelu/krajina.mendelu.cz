@@ -1,0 +1,44 @@
+
+{#{% extends "base.html.twig" %}#}
+
+{#{% block content %}#}
+
+{#<br><br><br>#}
+{#    #}
+
+{#    {{ dump(rollups) }}#}
+<div class="survey-slider">
+    {% for id, question in rollups|slice(0, max) %}
+        <div class="survey-slide">
+{#            {{ dump(question) }}#}
+            <h3 class="h3">
+                {{ question.metadata.text }}
+            </h3>
+
+            {% if question.metadata.display_type is defined and question.metadata.display_type == 'numerical' %}
+                <p>v průměru: {{ question.summary_data[0].mean|round(2) }} Kč</p>
+            {% else %}
+                {% for n, row in question.rows %}
+                    <div class="progress">
+                        <div class="bar" style="width: {{ question.summary_data[n].percentage.total }}%; "></div>
+                    </div>
+                    <div class="slide-description">
+                        <p class="left">{{ row.text }}</p>
+                        <p class="right text-comment">{{ question.summary_data[n].total }} / {{ question.summary_data[n].percentage.total|round(2) }} %</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% if mode == "carousel" %}
+    <div class="survey-dots">
+        {% for id, question in rollups|slice(0, max) %}
+            <div class="survey-dot siema-dot {{ (loop.index0 == 0) ? 'selected' }}" data-siema-id="{{ loop.index0 }}"></div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+
+{#{% endblock %}#}

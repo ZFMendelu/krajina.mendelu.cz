@@ -203,6 +203,162 @@
                     </properties>
                 </type>
 
+                <type name="map">
+                    <meta><title lang="en">map</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="map" type="single_media_selection">
+                            <meta>
+                                <title lang="en">Map</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="description" type="text_editor">
+                            <meta>
+                                <title lang="en">Description</title>
+                            </meta>
+                        </property>
+                        <block name="sub_blocks_2" default-type="point" minOccurs="0">
+                            <meta> <title lang="en">Points</title> </meta>
+                            <params> <param name="add_button_text"> <meta> <title lang="en">Add point</title> </meta> </param> </params>
+                            <types>
+                                <type name="point">
+                                    <meta><title lang="en">text</title></meta>
+                                    <properties>
+                                        <property name="name" type="text_line" colspan="6">
+                                            <meta>
+                                                <title lang="en">name</title>
+                                            </meta>
+                                            <tag name="sulu.block_preview" priority="1024"/>
+                                        </property>
+
+                                        <property name="color" type="color" colspan="6">
+                                            <meta>
+                                                <title lang="en">Color</title>
+                                            </meta>
+                                            <tag name="sulu.block_preview" priority="512"/>
+                                        </property>
+
+                                        <property name="coor_x" type="number" colspan="6">
+                                            <meta>
+                                                <title lang="en">X</title>
+                                            </meta>
+                                            <params>
+                                                <param name="min" value="0"/>
+                                                <param name="max" value="100"/>
+                                            </params>
+                                        </property>
+
+                                        <property name="coor_y" type="number" colspan="6">
+                                            <meta>
+                                                <title lang="en">Y</title>
+                                            </meta>
+                                            <params>
+                                                <param name="min" value="0"/>
+                                                <param name="max" value="100"/>
+                                            </params>
+                                        </property>
+
+                                        <property name="link" type="single_page_selection">
+                                            <meta>
+                                                <title lang="en">Link</title>
+                                            </meta>
+                                        </property>
+
+
+
+                                    </properties>
+                                </type>
+                            </types>
+                        </block>
+                    </properties>
+                </type>
+
+                <type name="survey_results">
+                    <meta><title lang="en">survey results</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="survey_url" type="text_line">
+                            <meta>
+                                <title lang="en">survey url</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="results_url" type="text_line">
+                            <meta>
+                                <title lang="en">results url</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="max_questions" type="number">
+                            <meta>
+                                <title lang="en">Max displayed questions</title>
+                            </meta>
+                            <params>
+                                <param name="min" value="0"/>
+                                <param name="step" value="1"/>
+                            </params>
+                        </property>
+                        <property name="key" type="text_line" colspan="6">
+                            <meta>
+                                <title lang="en">survey resutls key</title>
+                            </meta>
+                        </property>
+                        <property name="locale" type="text_line" colspan="6">
+                            <meta>
+                                <title lang="en">survey resutls locale</title>
+                            </meta>
+                        </property>
+                    </properties>
+                </type>
+
+                <type name="i_want_to_help">
+                    <meta><title lang="en">I wanna help</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                    </properties>
+                </type>
+
+
+                <type name="image">
+                    <meta><title lang="en">image</title></meta>
+                    <properties>
+                        <property name="id" type="text_line">
+                            <meta> <title lang="en">id</title> </meta>
+                        </property>
+                        <property name="link" type="text_line">
+                            <meta> <title lang="en">link</title> </meta>
+                        </property>
+                        <property name="image" type="single_media_selection">
+                            <meta>
+                                <title lang="en">Image</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                        <property name="description" type="text_line">
+                            <meta>
+                                <title lang="en">Description</title>
+                            </meta>
+                            <tag name="sulu.block_preview" priority="1024"/>
+                        </property>
+                    </properties>
+                </type>
+
+                <type name="code">
+                    <meta><title lang="en">code block</title></meta>
+                    <properties>
+                        <property name="code" type="text_area">
+                            <meta> <title lang="en">code</title> </meta>
+                        </property>
+                    </properties>
+                </type>
+
 
             </types>
         </block>

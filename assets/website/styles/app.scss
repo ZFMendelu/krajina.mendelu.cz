@@ -6,6 +6,13 @@
 
 @import 'layouts/navigation';
 @import "layouts/footer";
+@import "layouts/matterport-embed";
+@import "layouts/btns";
+@import "layouts/breadcrumbs";
+@import "layouts/survey";
 
+@import "pages/default";
 @import "pages/homepage";
+@import "pages/catalogue";
+@import "pages/catalogue-section";
 

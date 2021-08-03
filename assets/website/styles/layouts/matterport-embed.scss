@@ -1,0 +1,32 @@
+.matterport-embed {
+    display: none;
+    z-index: 10000;
+    background: rgba(0,0,0,.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    &.displayed {
+        display: block;
+    }
+    .btn-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: #ffffff;
+        padding: .2rem 1rem;
+        background: #000000;
+        border-radius: 2rem;
+        cursor: pointer;
+        z-index: 100000;
+    }
+    @media (min-width: 1000px) {
+        padding: 2rem;
+        .btn-close {
+            top: 3rem;
+            right: 3rem;
+        }
+    }
+}

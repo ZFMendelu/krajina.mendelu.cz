@@ -26,8 +26,8 @@ hr {
     height: 1px;
     border: none;
     margin: 1rem auto;
-    max-width: 90rem;
-    background: #333333;
+    max-width: 75rem;
+    background: #888888;
 }
 
 p { font-size: 1.2rem; padding-bottom: 1.5rem; line-height: 2.4rem; max-width: 45rem;}
@@ -71,17 +71,19 @@ a {
         right: 0;
         bottom: 0;
         left:0;
+        top:0;
         width: 100%;
         height: 100%;
-        max-height: 1px;
         z-index: -100;
-        background: #165c38;
+        background: transparent;
+        border-bottom: 1px solid rgb(22,92,56);
         transition: all .2s;
     }
     &:hover {
-        color: #ffffff;
+        //color: #ffffff;
         &::after {
             max-height: 100px;
+            background: rgba(22,92,56,.1);
         }
     }
 
@@ -111,8 +113,10 @@ a {
     }
     a {
         color: #ffffff;
-        &::after {
-            background: #0cb35d;
+        &:hover{
+            &::after {
+                background: #0cb35d;
+            }
         }
     }
 }

@@ -43,6 +43,19 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'image'  %}
+                <div class="image" {{ blockid|raw }}>
+                    <a href="{{ block.link }}" class="clean" target="_blank">
+                        <img src="{{ block.image.thumbnails['catalogue-1200'] }}" alt="{{ block.image.title }}"/>
+                    </a>
+                    {% if block.description is not empty %}
+                    <div class="container-40">
+                        <p class="text-comment">{{ block.description|raw }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             {% if block.type == 'opening_hours' %}
                 <div class="text" {{ blockid|raw }}>
                     <div class="container-40 ckeditorOutput">
@@ -71,6 +84,100 @@
                 </div>
             {% endif %}
 
+            {% if block.type == 'map' %}
+                <div class="map" {{ blockid|raw }}>
+                    <img class="map" src="{{ block.map.thumbnails['map.jpg'] }}" alt="">
+                    {% for sub_block in block.sub_blocks_2  %}
+                        {% if sub_block.type == 'point' %}
+                            {% set page = sulu_content_load(sub_block.link) %}
+                            <a class="point" href="{{ page.content.url }}"
+                               style="top: {{ sub_block.coor_y }}%; left: {{ sub_block.coor_x }}%; background-color: {{ sub_block.color }}"
+                            ></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="map-description">
+                    <div class="container-40 ckeditorOutput">
+                        {{ block.description|raw }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'survey_results' %}
+                <div class="container-40 survey-results" {{ blockid|raw }} data-key="{{ block.key }}" data-locale="{{ block.locale }}" data-max="{{ block.max_questions }}">
+                    <img src="{{ asset("build/website/img/spinner.svg") }}" class="survey-spinner" alt="" style="height: 10rem">
+                    <p class="text-center text-comment">Načítám aktuální výsledky</p>
+                </div>
+                <div class="container-40">
+                    <div class="survey-btns">
+                        <div class="btn siema-prev">
+                            <img src="{{ asset("build/website/img/prev.svg") }}" alt="" style="height: 1.2rem">
+                        </div>
+                        <a class="btn secondary" href="/vysledky-ankety" target="_blank">Všechny výsledky</a>
+                        <a class="btn primary text-center" href="{{ block.survey_url }}" target="_blank">Vyplnit anketu</a>
+                        <div class="btn siema-next">
+                            <img src="{{ asset("build/website/img/next.svg") }}" alt="" style="height: 1.2rem">
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'i_want_to_help'  %}
+                <div class="container-40 text-center" {{ blockid|raw }}>
+                    <h3 class="h3">Chci pomoct krajině</h3>
+                </div>
+                <div class="iwth">
+                    <div class="col first">
+                        <h3 class="h3">Vlastním půdu</h3>
+                        <hr>
+                        <a class="btn block"  href="/chci-hospodarit-sam">
+                            <p>Chci hospodařit sám</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="btn block"  href="/svou-pudu-pronajimam">
+                            <p>Svou půdu pronajímám</p>
+                            <p class="text-comment">Můžeš zajistit šetrné hospodaření na své půdě!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-vytvorit-neco-smysluplneho">
+                            <p>Chci vytvořit něco smysluplného</p>
+                            <p class="text-comment">Můžeš zvýšit pestrost krajiny!</p>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <h3 class="h3">Nevlastním půdu</h3>
+                        <hr>
+                        <a class="btn block"  href="/hospodarim-na-cizi-pude">
+                            <p>Hospodařímna cizí půdě</p>
+                            <p class="text-comment">Máš přímý vliv na pozitivní změnu!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-podporit-dobre-hospodareni">
+                            <p>Chci podpořit dobré hospodaření</p>
+                            <p class="text-comment">Podpoř místní iniciativy a farmáře!</p>
+                        </a>
+                        <a class="btn block"  href="/chci-se-podilet-na-zlepseni-krajiny">
+                            <p>Chci se podílet na zlepšení krajiny</p>
+                            <p class="text-comment">Daruj svůj čas a staň se dobrovolníkem!</p>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if block.type == 'code'  %}
+                {{ block.code|raw }}
+            {% endif %}
+
         {% endfor %}
     </div>
+
+    <div class="matterport-embed">
+        <div class="btn-close">zavřít</div>
+        <iframe src="" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('homepage') }}
 {% endblock %}

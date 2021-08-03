@@ -16,9 +16,11 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "axios": "^0.21.1",
         "file-loader": "^6.2.0",
         "imagesloaded": "^4.1.4",
         "sass": "^1.32.12",
-        "sass-loader": "^11.0.1"
+        "sass-loader": "^11.0.1",
+        "siema": "^1.5.1"
     }
 }

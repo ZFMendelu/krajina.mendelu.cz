@@ -1,0 +1,97 @@
+.survey-slider {
+    .survey-slide {
+        padding: 1rem;
+        .progress {
+            background: #165C3819;
+            border-radius: 1rem;
+            .bar {
+                height: 1rem;
+                border-radius: 1rem;
+                background: #165C38;
+            }
+        }
+        .slide-description {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            padding-bottom: 2rem;
+            .right {
+                text-align: right;
+            }
+        }
+        p {
+            padding: 0;
+        }
+    }
+}
+
+.survey-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    .btn.siema-next, .btn.siema-prev {
+        grid-row: 1 / 2;
+        img {
+            margin: auto;
+            display: block;
+        }
+    }
+    .btn.primary {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    .btn.secondary {
+        grid-column: 1/3;
+        grid-row: 3/4;
+        text-align: center;
+    }
+    @media (min-width: 40rem) {
+        grid-template-columns: auto auto 1fr auto;
+        .btn.primary, .btn.secondary, .btn.siema-next, .btn.siema-prev {
+            grid-row: initial;
+            grid-column: initial;
+        }
+    }
+}
+
+.survey-dots {
+    text-align: center;
+    .survey-dot {
+        cursor: pointer;
+        border-radius: 1rem;
+        width: 1rem;
+        height: 1rem;
+        background: #165C3819;
+        display: inline-block;
+        &.selected {
+            background: #165C38;
+        }
+    }
+}
+
+@keyframes spinner {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+.survey-spinner {
+    margin: 3rem auto;
+    display: block;
+    animation: spinner linear 2.42s infinite;
+}
+
+#default {
+    .survey-slide {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .survey-btns {
+        @media (min-width: 40rem) {
+            grid-template-columns: 1fr;
+            .btn.primary, .btn.secondary, .btn.siema-next, .btn.siema-prev {
+                grid-row: initial;
+                grid-column: initial;
+            }
+        }
+    }
+}

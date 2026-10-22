@@ -1,0 +1,100 @@
+services:
+    proxy:
+        image: nginx:1.25-alpine
+        container_name: krajina-proxy
+        restart: unless-stopped
+        networks:
+            - krajina
+        ports:
+            - "80:80"
+        volumes:
+            - ./public:/srv/public:ro
+            - ./proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+
+    mysql:
+        image: mysql:8.0
+        container_name: krajina-mysql
+        restart: unless-stopped
+        networks:
+            - krajina
+        environment:
+            MYSQL_DATABASE: krajina
+            MYSQL_USER: krajina
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: secret
+        volumes:
+            - ./volumes/db_data:/var/lib/mysql:rw
+            # imported once, on the first start with an empty volumes/db_data
+            - ./krajina.sql:/docker-entrypoint-initdb.d/krajina.sql:ro
+
+    mailer:
+        image: axllent/mailpit
+        container_name: krajina-mailer
+        restart: unless-stopped
+        networks:
+            - krajina
+        environment:
+            MP_SMTP_AUTH_ACCEPT_ANY: 1
+            MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+    adminer:
+        image: adminer
+        container_name: krajina-adminer
+        restart: unless-stopped
+        networks:
+            - krajina
+        depends_on:
+            - mysql
+        environment:
+            ADMINER_DEFAULT_SERVER: mysql
+
+    web:
+        build:
+            context: .
+            target: build
+        container_name: krajina-web
+        restart: unless-stopped
+        networks:
+            - krajina
+        volumes:
+            - ./:/srv:rw
+        depends_on:
+            - proxy
+            - mysql
+            - mailer
+        environment:
+            DATABASE_URL: mysql://krajina:secret@mysql:3306/krajina?serverVersion=8.0
+            MAILER_URL: smtp://mailer:1025
+            APP_ENV: dev
+            APP_DEBUG: "true"
+            APP_SECRET: 8982139bf080b1af38c0b18268b6d187
+            PHP_MEMORY_LIMIT: 512M
+        command:
+            - /bin/bash
+            - -c
+            - |
+                composer install --prefer-dist --no-progress --no-interaction --no-scripts
+                bin/adminconsole cache:clear
+                bin/websiteconsole cache:clear
+                php-fpm
+
+    asset-builder:
+        image: node:14-bullseye
+        container_name: krajina-asset-builder
+        restart: unless-stopped
+        networks:
+            - krajina
+        command:
+            - /bin/bash
+            - -c
+            - |
+                yarn install
+                yarn watch
+        volumes:
+            - ./:/app:rw
+        working_dir: /app
+        depends_on:
+            - web
+
+networks:
+    krajina:

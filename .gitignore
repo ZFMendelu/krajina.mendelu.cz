@@ -53,3 +53,7 @@ yarn-error.log
 
 
 /public/pdf/
+###> local docker ###
+/volumes/
+/compose.override.yaml
+###< local docker ###
